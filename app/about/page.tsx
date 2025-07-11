@@ -1,0 +1,11 @@
+"use client";
+
+import AboutPage from "../components/about/AboutPage";
+
+export default function About() {
+  return (
+    <div className="p-4">
+      <AboutPage />
+    </div>
+  );
+}
