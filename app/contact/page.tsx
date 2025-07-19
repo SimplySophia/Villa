@@ -35,7 +35,7 @@ export default function ContactPage() {
         >
           <h2 className="text-4xl font-bold text-orange-600">Get in Touch</h2>
           <p className="text-gray-600">
-            We'd love to hear from you. Whether you re looking to rent, buy, or ask questions, feel free to reach out!
+            We&apos;d love to hear from you. Whether you&apos;re looking to rent, buy, or ask questions, feel free to reach out!
           </p>
 
           <div className="space-y-4 text-gray-700">
