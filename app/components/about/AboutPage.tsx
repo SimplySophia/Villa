@@ -11,7 +11,7 @@ const fadeInUp = {
 
 export default function AboutPage() {
   return (
-    <section className="py-16 px-4 max-w-6xl mx-auto space-y-16">
+    <section className="py-20 px-4 max-w-6xl mx-auto space-y-16">
       {/* Intro Section */}
       <motion.div
         variants={fadeInUp}
@@ -20,7 +20,7 @@ export default function AboutPage() {
         viewport={{ once: true }}
         className="text-center"
       >
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-800">About Villa Realty</h1>
+        <h1 className="text-3xl sm:text-3xl font-bold text-gray-800">About Villa Realty</h1>
         <p className="text-orange-600 mt-2 text-lg sm:text-xl">
           Your gateway to premium spaces in Sunny Isles Beach
         </p>

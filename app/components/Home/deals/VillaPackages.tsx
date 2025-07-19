@@ -12,35 +12,35 @@ import "aos/dist/aos.css";
 
 const villas = [
   {
-    id: "v1",
+    id: "1",
     title: "Serene Ocean Villa",
     location: "Sunny Isles Waterfront",
     price: 6200,
     image: "/images/listings/property-13.jpg",
   },
   {
-    id: "v2",
+    id: "2",
     title: "Coastal Palm Villa",
     location: "Golden Shores",
     price: 7000,
     image: "/images/listings/property-15.jpg",
   },
   {
-    id: "v3",
+    id: "3",
     title: "Zen Garden Estate",
     location: "Bay View Drive",
     price: 7500,
     image: "/images/listings/property-16.jpg",
   },
   {
-    id: "v4",
+    id: "4",
     title: "Tropical Escape Villa",
     location: "Sunset Bay, Sunny Isles",
     price: 8000,
     image: "/images/listings/property-10.jpg",
   },
   {
-    id: "v5",
+    id: "5",
     title: "Modern Minimal Villa",
     location: "Ocean Breeze Hills",
     price: 8600,

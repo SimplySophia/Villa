@@ -50,14 +50,14 @@ export const BestDeals = () => {
 
         {/* Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row justify-center items-center gap-4"
+          className="flex flex-col sm:flex-row justify-center items-center gap-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
           {[
             { label: "Apartment Deals", href: "/apartment-deals", color: "bg-orange-500" },
-            { label: "Penthouse Offers", href: "/pent-house", color: "bg-gray-600" },
+            { label: "Penthouse Offers", href: "/pent-house", color: "bg-gray-600", hover: "bg-orange-500" },
             { label: "Villa Packages", href: "/villa-packages", color: "bg-orange-500" },
           ].map((btn, idx) => (
             <motion.div key={idx} whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>

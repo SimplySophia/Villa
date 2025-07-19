@@ -4,7 +4,7 @@ import { IoIosMail } from "react-icons/io";
 
 export default function TopBar() {
   return (
-    <div className="bg-gray-100 border-b border-gray-200 text-sm text-gray-700 z-50 relative">
+    <div className="bg-gray-100 border-b border-gray-200 text-sm text-gray-700 fixed top-0 w-full z-[60]">
       <div className="max-w-6xl mx-auto px-2 py-2 flex justify-between items-center">
         {/* Site Info */}
         <div className="flex items-center justify-between gap-6">

@@ -23,9 +23,9 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="py-16 px-4 max-w-6xl mx-auto">
+    <div className="py-20 px-4 max-w-6xl mx-auto">
       <motion.h1
-        className="text-4xl font-bold text-center text-gray-800 mb-10"
+        className="text-4xl sm:text-3xl font-bold text-center text-gray-800 mb-10"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 20, x: 30 }}
         transition={{ duration: 0.10 }}

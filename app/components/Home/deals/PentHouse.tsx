@@ -14,35 +14,35 @@ import { CartButton } from "../../cart/CartButton";
 
 const penthouses = [
   {
-    id: "p1",
+    id: "1",
     title: "Skyline Penthouse",
     location: "Collins Ave, Sunny Isles",
     price: 7800,
     image: "/images/listings/property-14.jpg",
   },
   {
-    id: "p2",
+    id: "2",
     title: "Luxury High-Rise",
     location: "Oceanfront Drive",
     price: 9600,
     image: "/images/listings/property-07.jpg",
   },
   {
-    id: "p3",
+    id: "3",
     title: "Modern Oceanview",
     location: "Pierfront Blvd",
     price: 8900,
     image: "/images/listings/property-09.jpg",
   },
   {
-    id: "p4",
+    id: "4",
     title: "Elegant Top-Floor Retreat",
     location: "Palm Beach Skyline",
     price: 10500,
     image: "/images/listings/property-08.jpg",
   },
   {
-    id: "p5",
+    id: "5",
     title: "Panoramic City Escape",
     location: "Brickell, Miami",
     price: 8800,

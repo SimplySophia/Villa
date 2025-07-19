@@ -51,7 +51,7 @@ export default function Navbar() {
   const cartItems = propertyData.filter((item) => cart.includes(item.id as never));
 
   return (
-    <nav className="bg-white border-b border-gray-200 z-50 fixed top-0 w-full">
+    <nav className="bg-white border-b border-gray-200 z-50 fixed top-[30px] w-full">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-gray-800">VILLA</Link>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
           <Link href="/" className="text-gray-700 hover:text-orange-600 font-medium">Home</Link>
           <Link href="/about" className="text-gray-700 hover:text-orange-600 font-medium">About</Link>
           <Link href="/services" className="text-gray-700 hover:text-orange-600 font-medium">Services</Link>
-          <Link href="#map" scroll={true} className="text-gray-700 hover:text-orange-600 font-medium">Contact</Link>
+          <Link href="/contact" scroll={true} className="text-gray-700 hover:text-orange-600 font-medium">Contact</Link>
 
           {/* Auth Section */}
           <SignedOut>
@@ -138,7 +138,7 @@ export default function Navbar() {
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">Home</Link>
             <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">About</Link>
             <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">Services</Link>
-            <Link href="#map" scroll={true} onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">Contact</Link>
+            <Link href="/contact" scroll={true} onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">Contact</Link>
             <Link href="/cart" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">Cart</Link>
           </div>
         </div>

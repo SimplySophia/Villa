@@ -10,7 +10,7 @@ export default function CartPage() {
   const { cart } = useCart();
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="max-w-6xl mx-auto px-4 py-28 grid grid-cols-1 lg:grid-cols-3 gap-8">
       {/* Cart Items */}
       <div className="lg:col-span-2">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">🛒 Your Cart</h2>

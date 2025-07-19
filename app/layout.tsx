@@ -8,6 +8,7 @@ import Navbar from "./components/common/Navbar";
 import TopBar from "./components/common/Topbar";
 import Footer from "./components/footer/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
+import ScrollToTop from "./components/Helper/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <Toaster richColors position="top-right" />
+            <ScrollToTop />
           </CartProvider>
         </body>
       </html>

@@ -2,7 +2,7 @@
 
 import { VillaPackages } from "../components/Home/deals/VillaPackages";
 
-export default function About() {
+export default function Villa() {
   return (
     <div className="p-4">
       <VillaPackages />
