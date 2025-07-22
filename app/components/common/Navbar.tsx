@@ -64,9 +64,9 @@ export default function Navbar() {
 
           {/* Auth Section */}
           <SignedOut>
-            <SignInButton mode="modal">
+          <SignInButton mode="modal">
               <button className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm hover:bg-orange-600">Sign In</button>
-            </SignInButton>
+          </SignInButton>
             <SignUpButton mode="modal">
               <button className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm hover:bg-gray-900">Sign Up</button>
             </SignUpButton>
