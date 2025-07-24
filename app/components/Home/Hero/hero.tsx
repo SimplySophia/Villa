@@ -1,6 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { motion } from 'framer-motion';
+
+
 
 const images = [
   "/images/hero/banner-01.jpg",
@@ -10,6 +13,12 @@ const images = [
 
 export const Hero = () => {
   const [current, setCurrent] = useState(0);
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -54,6 +63,28 @@ export const Hero = () => {
           <p className="text-lg md:text-xl max-w-xl mx-auto">
             Rentals and commercial real estate at your fingertips
           </p>
+          
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
+          <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => scrollToSection('deals')}
+          className="bg-orange-600 text-white px-6 py-3 rounded-xl shadow hover:bg-orange-700 transition"
+        >
+          View Hot Deals
+        </motion.button>
+          
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => scrollToSection('map')}
+        className="border-2 border-orange-600 text-orange-600 px-6 py-2 rounded-xl hover:bg-purple-50 transition"
+      >
+        Contact Us
+      </motion.button>          
+    </div>
+
+
         </div>
       </div>
     </section>

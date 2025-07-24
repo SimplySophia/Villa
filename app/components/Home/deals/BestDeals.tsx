@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export const BestDeals = () => {
   return (
-    <section className="relative py-16 bg-white overflow-hidden">
+    <section className="relative py-16 bg-white overflow-hidden" id="deals">
       <SectionHeading heading="|Best Deals" />
 
       {/* Background Image */}

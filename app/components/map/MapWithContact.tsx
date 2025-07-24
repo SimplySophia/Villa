@@ -35,6 +35,7 @@ const properties = [
 
 export default function MapWithContact() {
   return (
+    <section  id="map" >
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -84,5 +85,6 @@ export default function MapWithContact() {
         </div>
       </div>
     </motion.div>
+    </section>
   );
 }

@@ -41,7 +41,7 @@ export default function ApartmentDeals() {
   }, []);
 
   return (
-    <section className="bg-gray-50 py-16 px-4">
+    <section className="bg-gray-50 py-16 px-4 mt-4">
       <div className="max-w-6xl mx-auto text-center mb-5">
         <h2 className="text-3xl font-bold text-gray-800">🔥 Apartment Deals</h2>
         <p className="text-gray-500">Hot offers, hand-picked for you</p>

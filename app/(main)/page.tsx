@@ -11,7 +11,7 @@ const MapClientWrapper = dynamic(() => import("../components/map/MapClientWrappe
 });
 const Home = () => {
     return ( 
-        <section>
+        <section className="">
             <Hero/>
             <Featured />
             <ViewProperties />

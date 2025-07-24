@@ -63,7 +63,7 @@ export const Featured = () => {
           </motion.div>
 
           <motion.div
-            className="absolute bottom-0 left-10 bg-orange-600 rounded-full w-15 h-15"
+            className="absolute bottom-0 left-10 bg-orange-600 rounded-full w-20 h-20"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -72,9 +72,9 @@ export const Featured = () => {
             <Image
               src="/images/featured/featured-icon.png"
               alt="Edge Visual"
-              width={70}
-              height={70}
-              className="rounded-lg ring-4 ring-white shadow-lg object-cover"
+              width={60}
+              height={60}
+              className="object-cover mx-auto p-2"
             />
           </motion.div>
 
