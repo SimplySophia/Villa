@@ -135,12 +135,12 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50">
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setMobileMenuOpen(false)} />
+          <div className="absolute inset-0 bg-opacity-50" onClick={() => setMobileMenuOpen(false)} />
 
           {/* Menu */}
           <div
             ref={menuRef}
-            className="absolute right-0 top-0 w-2/3 h-full bg-white shadow-lg p-6 space-y-6 animate-slide-in overflow-y-auto"
+            className="absolute left-0 top-0 w-2/3 h-full bg-white/80 p-6 space-y-6 animate-slide-in overflow-y-auto"
           >
             <div className="flex justify-end">
               <button onClick={() => setMobileMenuOpen(false)}>
