@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/hooks/useCart";
 import { Toaster } from "sonner";
@@ -10,15 +9,6 @@ import Footer from "./components/footer/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import ScrollToTop from "./components/Helper/ScrollToTop";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Villa Resort",
@@ -32,16 +22,16 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+      <html lang="en" dir="ltr">
+        <body suppressHydrationWarning>
           <CartProvider>
-            <TopBar />
             <div className="">
+              <TopBar />
               <Navbar />
             </div>
+            <main className="pt-24">
             {children}
+            </main>
             <Footer />
             <Toaster richColors position="top-right" />
             <ScrollToTop />

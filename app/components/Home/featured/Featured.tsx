@@ -63,7 +63,7 @@ export const Featured = () => {
           </motion.div>
 
           <motion.div
-            className="absolute bottom-0 left-10 bg-orange-600 rounded-full w-20 h-20"
+            className="absolute bottom-0 left-8 bg-orange-600 rounded-full w-15 h-15 hidden md:block"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -72,9 +72,9 @@ export const Featured = () => {
             <Image
               src="/images/featured/featured-icon.png"
               alt="Edge Visual"
-              width={60}
-              height={60}
-              className="object-cover mx-auto p-2"
+              width={50}
+              height={50}
+              className="object-cover mx-auto m-2 text-center p-2"
             />
           </motion.div>
 
@@ -87,7 +87,7 @@ export const Featured = () => {
             viewport={{ once: true }}
           >
             <div className="p-4">
-              <h3 className="text-4xl font-bold mb-4 text-black">
+              <h3 className="text-4xl font-bold mb-4 text-black break-words text-center md:text-left">
                 Best Apartment & Sea View
               </h3>
               <motion.div

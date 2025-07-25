@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useCart } from "@/hooks/useCart";
-import { ShoppingCart, Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { propertyData } from "@/lib/data/properties";
-import clsx from "clsx";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useCart } from '@/hooks/useCart';
+import { useEffect, useRef, useState } from 'react';
+import { propertyData } from '@/lib/data/properties';
+import clsx from 'clsx';
+import { Menu, X, ShoppingCart } from 'lucide-react';
 import {
   SignedIn,
   SignedOut,
   SignInButton,
   SignUpButton,
   UserButton,
-} from "@clerk/nextjs";
+} from '@clerk/nextjs';
 
 export default function Navbar() {
   const { cart } = useCart();
@@ -21,6 +21,8 @@ export default function Navbar() {
   const [showPreview, setShowPreview] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const cartItems = propertyData.filter((item) => cart.includes(item.id as never));
 
   useEffect(() => {
     if (cart.length > 0) {
@@ -31,42 +33,37 @@ export default function Navbar() {
   }, [cart.length]);
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    const handler = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setMobileMenuOpen(false);
       }
-    }
+    };
 
     if (mobileMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handler);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handler);
     };
   }, [mobileMenuOpen]);
 
-  const cartItems = propertyData.filter((item) => cart.includes(item.id as never));
-
   return (
-    <nav className="bg-white border-b border-gray-200 z-50 fixed top-[30px] w-full">
+    <nav className="fixed top-10 z-40 w-full bg-white border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-gray-800">VILLA</Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-6">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-6">
           <Link href="/" className="text-gray-700 hover:text-orange-600 font-medium">Home</Link>
           <Link href="/about" className="text-gray-700 hover:text-orange-600 font-medium">About</Link>
           <Link href="/services" className="text-gray-700 hover:text-orange-600 font-medium">Services</Link>
-          <Link href="/contact" scroll={true} className="text-gray-700 hover:text-orange-600 font-medium">Contact</Link>
+          <Link href="/contact" className="text-gray-700 hover:text-orange-600 font-medium">Contact</Link>
 
-          {/* Auth Section */}
           <SignedOut>
-          <SignInButton mode="modal">
+            <SignInButton mode="modal">
               <button className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm hover:bg-orange-600">Sign In</button>
-          </SignInButton>
+            </SignInButton>
             <SignUpButton mode="modal">
               <button className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm hover:bg-gray-900">Sign Up</button>
             </SignUpButton>
@@ -95,6 +92,7 @@ export default function Navbar() {
               )}
             </Link>
 
+            {/* Cart Preview */}
             {showPreview && cartItems.length > 0 && (
               <div className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 border border-gray-100 z-50">
                 <h4 className="text-sm font-semibold text-gray-700 mb-2">Cart Preview</h4>
@@ -122,7 +120,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Hamburger Mobile Button */}
+        {/* Mobile Hamburger */}
         <button className="md:hidden" onClick={() => setMobileMenuOpen(true)}>
           <Menu className="w-6 h-6 text-gray-800" />
         </button>
@@ -130,16 +128,18 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div ref={menuRef} className="fixed inset-0 bg-black bg-opacity-40 z-40">
-          <div className="absolute top-0 left-0 w-64 h-full bg-white shadow-lg p-6 z-50 flex flex-col gap-6 animate-slide-in">
-            <button onClick={() => setMobileMenuOpen(false)} className="self-end">
-              <X className="w-6 h-6 text-gray-600" />
-            </button>
-            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">Home</Link>
-            <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">About</Link>
-            <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">Services</Link>
-            <Link href="/contact" scroll={true} onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">Contact</Link>
-            <Link href="/cart" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-600">Cart</Link>
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-end">
+          <div ref={menuRef} className="w-2/3 bg-white h-full shadow-lg p-6 space-y-6 animate-slide-in">
+            <div className="flex justify-end">
+              <button onClick={() => setMobileMenuOpen(false)}>
+                <X className="w-6 h-6 text-gray-600" />
+              </button>
+            </div>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium hover:text-orange-600">Home</Link>
+            <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium hover:text-orange-600">About</Link>
+            <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium hover:text-orange-600">Services</Link>
+            <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium hover:text-orange-600">Contact</Link>
+            <Link href="/cart" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium hover:text-orange-600">Cart</Link>
           </div>
         </div>
       )}
