@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" dir="ltr">
-        <body suppressHydrationWarning>
+        <body suppressHydrationWarning className="overflow-x-hidden">
           <CartProvider>
             <div className="">
               <TopBar />

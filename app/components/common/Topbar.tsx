@@ -9,8 +9,8 @@ import { IoIosMail } from "react-icons/io";
 
 export default function TopBar() {
   return (
-    <div className="bg-gray-100 border-b border-gray-200 text-sm text-gray-700 fixed top-0 w-full z-50 h-10 px-4">
-      <div className="max-w-6xl mx-auto flex justify-between items-center h-full flex-wrap gap-2 sm:gap-0">
+    <div className="fixed top-0 h-10 left-0 z-50 w-full bg-white border-b border-gray-200">
+      <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-full flex-wrap gap-2 sm:gap-0">
         {/* Site Info */}
         <div className="flex items-center gap-6 flex-wrap text-xs sm:text-sm">
           <div className="flex items-center gap-1">
@@ -19,7 +19,7 @@ export default function TopBar() {
           </div>
           <div className="flex items-center gap-1">
             <FaMap className="text-orange-600" />
-            <p className="hidden sm:block">Sunny Isles Beach, FL 33160</p>
+            <p className="hidden sm:block truncate max-w-[150px]">Sunny Isles Beach, FL 33160</p>
           </div>
         </div>
 

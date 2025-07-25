@@ -74,7 +74,7 @@ export default function Navbar() {
 
           {/* Cart */}
           <div
-            className="relative"
+            className="relative overflow-x-hidden"
             onMouseEnter={() => setShowPreview(true)}
             onMouseLeave={() => setShowPreview(false)}
           >
