@@ -55,8 +55,8 @@ export const Hero = () => {
       </div>
 
       {/* Overlay Content */}
-      <div className="relative z-10 flex items-center justify-center text-white text-center px-4 h-full">
-        <div className="flex flex-col items-center w-full max-w-4xl">
+      <div className="relative z-10 flex items-center justify-center text-white text-center px-4 py-8 h-full">
+        <div className="flex flex-col items-center gap-4 w-full max-w-4xl">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 drop-shadow">
             Find Your Perfect Space in Sunny Isles
           </h1>
@@ -64,7 +64,7 @@ export const Hero = () => {
             Rentals and commercial real estate at your fingertips
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row items-center gap-4 py-4">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
