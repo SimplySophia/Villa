@@ -41,15 +41,20 @@ export default function Navbar() {
 
     if (mobileMenuOpen) {
       document.addEventListener('mousedown', handler);
+      // Prevent scrolling when mobile menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
 
     return () => {
       document.removeEventListener('mousedown', handler);
+      document.body.style.overflow = '';
     };
   }, [mobileMenuOpen]);
 
   return (
-    <nav className="fixed top-10 z-40 w-full bg-white border-b border-gray-200">
+    <nav className="fixed top-10 z-50 w-full bg-white border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-gray-800">VILLA</Link>
 
@@ -126,10 +131,17 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Backdrop & Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-end">
-          <div ref={menuRef} className="w-2/3 bg-white h-full shadow-lg p-6 space-y-6 animate-slide-in">
+        <div className="fixed inset-0 z-50">
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setMobileMenuOpen(false)} />
+
+          {/* Menu */}
+          <div
+            ref={menuRef}
+            className="absolute right-0 top-0 w-2/3 h-full bg-white shadow-lg p-6 space-y-6 animate-slide-in overflow-y-auto"
+          >
             <div className="flex justify-end">
               <button onClick={() => setMobileMenuOpen(false)}>
                 <X className="w-6 h-6 text-gray-600" />
