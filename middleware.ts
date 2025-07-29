@@ -7,6 +7,11 @@ const isPublicRoute = createRouteMatcher([
   "/services",
   "/contact",
     "/cart",
+   "/apartment-deals",
+   "/pent-house",
+   "/villa-packages",
+   "/properties/${property.id}",
+  "/properties",
   "/sign-in(.*)",
   "/sign-up(.*)",
 ]);
