@@ -1,11 +1,21 @@
 "use client";
 
 import { useCart } from "@/hooks/useCart";
+import { SignInButton, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 export const CartSummaryCard = () => {
   const { cart } = useCart();
+  const { user } = useUser();
+  const router = useRouter();
 
   const subtotal = cart.reduce((acc, item) => acc + Number(item.price), 0);
+
+  const handleCheckout = () => {
+    if (user) {
+      router.push("/checkout");
+    }
+  };
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-6 sticky top-20 h-fit">
@@ -21,10 +31,24 @@ export const CartSummaryCard = () => {
         <span>${subtotal.toLocaleString()}</span>
       </div>
 
-      {/* Checkout button placeholder */}
-      <button className="mt-6 w-full bg-orange-600 text-white font-semibold py-2 px-4 rounded hover:bg-orange-700 transition">
-        Proceed to Checkout
-      </button>
+      <div className="mt-6 w-full">
+        {user ? (
+          <button
+            onClick={handleCheckout}
+            className="w-full bg-orange-600 text-white font-semibold py-2 px-4 rounded hover:bg-orange-700 transition"
+          >
+            Proceed to Checkout
+          </button>
+        ) : (
+          <SignInButton mode="modal">
+            <button
+              className="w-full bg-orange-600 text-white font-semibold py-2 px-4 rounded hover:bg-orange-700 transition"
+            >
+              Sign in to Proceed
+            </button>
+          </SignInButton>
+        )}
+      </div>
     </div>
   );
 };

@@ -6,9 +6,8 @@ import "leaflet/dist/leaflet.css";
 import Navbar from "./components/common/Navbar";
 import TopBar from "./components/common/Topbar";
 import Footer from "./components/footer/Footer";
-import { ClerkProvider } from "@clerk/nextjs";
 import ScrollToTop from "./components/Helper/ScrollToTop";
-
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "Villa Resort",
@@ -29,9 +28,7 @@ export default function RootLayout({
               <TopBar />
               <Navbar />
             </div>
-            <main className="pt-24">
-            {children}
-            </main>
+            <main className="pt-24">{children}</main>
             <Footer />
             <Toaster richColors position="top-right" />
             <ScrollToTop />

@@ -7,13 +7,13 @@ import { useEffect, useRef, useState } from 'react';
 import { propertyData } from '@/lib/data/properties';
 import clsx from 'clsx';
 import { Menu, X, ShoppingCart } from 'lucide-react';
-import {
+{/*import {
   SignedIn,
   SignedOut,
   SignInButton,
   SignUpButton,
   UserButton,
-} from '@clerk/nextjs';
+} from '@clerk/nextjs';*/}
 
 export default function Navbar() {
   const { cart } = useCart();
@@ -65,25 +65,13 @@ export default function Navbar() {
           <Link href="/services" className="text-gray-700 hover:text-orange-600 font-medium">Services</Link>
           <Link href="/contact" className="text-gray-700 hover:text-orange-600 font-medium">Contact</Link>
 
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm hover:bg-orange-600">Sign In</button>
-            </SignInButton>
-            <SignUpButton mode="modal">
-              <button className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm hover:bg-gray-900">Sign Up</button>
-            </SignUpButton>
-          </SignedOut>
-          <SignedIn>
-            <UserButton afterSignOutUrl="/" />
-          </SignedIn>
-
           {/* Cart */}
           <div
             className="relative overflow-x-hidden"
             onMouseEnter={() => setShowPreview(true)}
             onMouseLeave={() => setShowPreview(false)}
           >
-            <Link href="/cart">
+            <Link href="/cart" aria-label="Go to cart">
               <ShoppingCart
                 className={clsx(
                   "w-6 h-6 text-gray-700 hover:text-orange-600 transition-transform",
@@ -126,7 +114,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger */}
-        <button className="md:hidden" onClick={() => setMobileMenuOpen(true)}>
+        <button className="md:hidden"  onClick={() => setMobileMenuOpen(true)} aria-label="Toggle mobile menu">
           <Menu className="w-6 h-6 text-gray-800" />
         </button>
       </div>
@@ -140,7 +128,8 @@ export default function Navbar() {
           {/* Menu */}
           <div
             ref={menuRef}
-            className="absolute left-0 top-0 w-2/3 h-full bg-white/80 p-6 space-y-6 animate-slide-in overflow-y-auto"
+            className="absolute left-0 top-0 w-[80vw] sm:w-[60vw]
+ h-full bg-white/80 p-6 space-y-6 animate-slide-in overflow-y-auto"
           >
             <div className="flex justify-end">
               <button onClick={() => setMobileMenuOpen(false)}>
