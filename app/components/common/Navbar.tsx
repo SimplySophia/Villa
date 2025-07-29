@@ -59,7 +59,7 @@ export default function Navbar() {
         <Link href="/" className="text-2xl font-bold text-gray-800">VILLA</Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex items-center space-x-8">
           <Link href="/" className="text-gray-700 hover:text-orange-600 font-medium">Home</Link>
           <Link href="/about" className="text-gray-700 hover:text-orange-600 font-medium">About</Link>
           <Link href="/services" className="text-gray-700 hover:text-orange-600 font-medium">Services</Link>
@@ -67,23 +67,23 @@ export default function Navbar() {
 
           {/* Cart */}
           <div
-            className="relative overflow-x-hidden"
-            onMouseEnter={() => setShowPreview(true)}
-            onMouseLeave={() => setShowPreview(false)}
-          >
-            <Link href="/cart" aria-label="Go to cart">
-              <ShoppingCart
-                className={clsx(
-                  "w-6 h-6 text-gray-700 hover:text-orange-600 transition-transform",
-                  shake && "animate-shake"
-                )}
-              />
-              {cart.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-orange-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                  {cart.length}
-                </span>
-              )}
-            </Link>
+  className="relative"
+  onMouseEnter={() => setShowPreview(true)}
+  onMouseLeave={() => setShowPreview(false)}
+>
+  <Link href="/cart" aria-label="Go to cart">
+    <ShoppingCart
+      className={clsx(
+        "w-6 h-6 text-gray-700 hover:text-orange-600 transition-transform",
+        shake && "animate-shake"
+      )}
+    />
+    {cart.length > 0 && (
+      <span className="absolute -top-2 -right-2 bg-orange-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+        {cart.length}
+        </span>
+    )}
+  </Link>
 
             {/* Cart Preview */}
             {showPreview && cartItems.length > 0 && (
